@@ -13,3 +13,21 @@ body {
 .lists {
     margin-top: -150px;
 }
+footer {
+    margin: 0px 50px;
+    text-align: center;
+    background-color: #111;
+}
+.loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
