@@ -21,7 +21,7 @@ export default function FeaturedMovie({ item }) {
                         {item.original_name}
                     </div>
                     <div className="featured--info">
-                        <div className="featured--point">
+                        <div className="featured--points">
                             {item.vote_average} pontos
                         </div>
                         <div className="featured--year">
@@ -35,8 +35,8 @@ export default function FeaturedMovie({ item }) {
                         {item.overview}
                     </div>
                     <div className="featured--buttons">
-                        <a href={`/watch/${item.id}`}>▶ Assistir</a>
-                        <a href={`/list/add/${item.id}`}>+ Minha Lista</a>
+                        <a href={`/watch/${item.id}`} className="featured--watchbutton">▶ Assistir</a>
+                        <a href={`/list/add/${item.id}`} className="featured--mylistbutton">+ Minha Lista</a>
                     </div>
                     <div className="featured--genres">
                         <strong>Gêneros:</strong>

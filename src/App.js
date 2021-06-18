@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import tmdb from './tmdb';
-import MovieRow from './components/MovieRow';
-import FeaturedMovie from './components/FeaturedMovie';
+import MovieRow from './components/MovieRow/MovieRow';
+import FeaturedMovie from './components/FeaturedMovie/FeaturedMovie';
+import Header from './components/Header/Header';
 
 export default function Home() {
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -25,8 +27,24 @@ export default function Home() {
     loadAll();
   }, [])
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if(window.scrollY > 10) {
+        setBlackHeader(true)
+      } else {
+        setBlackHeader(false)
+      }
+    }
+    window.addEventListener("scroll", scrollListener);
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    }
+  },[])
+
   return (
     <div className="page">
+
+      <Header black={blackHeader}/>
 
       {featuredData &&
         <FeaturedMovie item={featuredData} />
