@@ -1,5 +1,7 @@
 # Netflix Home
 > Netflix homepage with React.js
+> 
+[![CI](https://github.com/LucasAlvaresA/netflix-clone/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/LucasAlvaresA/netflix-clone/actions/workflows/gh-pages.yml)
 
 <div>
   <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB" />
