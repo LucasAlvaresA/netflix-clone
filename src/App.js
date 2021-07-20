@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { Route } from "react-router-dom";
 import "./App.css";
 import tmdb from "./tmdb";
 import MovieRow from "./components/MovieRow/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie/FeaturedMovie";
 import Header from "./components/Header/Header";
 import loader from "./assets/loader.gif";
-export default function Home() {
+
+export default function App() {
+    return (
+        <Route path="/">
+            <Home />
+        </Route>
+    );
+}
+
+function Home() {
     const [movieList, setMovieList] = useState([]);
     const [featuredData, setFeaturedData] = useState(null);
     const [blackHeader, setBlackHeader] = useState(false);
@@ -14,7 +24,7 @@ export default function Home() {
         const loadAll = async () => {
             // Get all movies and series from API
             let list = await tmdb.getHomeList();
-            setMovieList(list)
+            setMovieList(list);
 
             // Get the Featured Movie
             let originals = list.filter((i) => i.slug === "originals");
@@ -23,7 +33,7 @@ export default function Home() {
             );
             let chosen = originals[0].items.results[randomChosen];
             let chosenInfo = await tmdb.getMovieInfo(chosen.id, "tv");
-            setFeaturedData(chosenInfo)
+            setFeaturedData(chosenInfo);
         };
         loadAll();
     }, []);
