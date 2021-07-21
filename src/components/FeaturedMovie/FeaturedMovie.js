@@ -41,14 +41,14 @@ export default function FeaturedMovie({ item }) {
                     <div className="featured--buttons">
                         <a
                             // href={`/watch/${item.id}`}
-                            href={"/"}
+                            href={"https://lucasalvaresa.github.io/netflix-clone/#/"}
                             className="featured--watchbutton"
                         >
                             ▶ Assistir
                         </a>
                         <a
                             // href={`/list/add/${item.id}`}
-                            href={"/"}
+                            href={"https://lucasalvaresa.github.io/netflix-clone/#/"}
                             className="featured--mylistbutton"
                         >
                             + Minha Lista
