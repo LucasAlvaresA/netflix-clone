@@ -19,15 +19,15 @@
 ![](image1.png) 
 ![](image2.png) 
 
-## Instalação
+## Installing the project
 
-Após clonar o projeto:
+Inside the project folder, use the command:
 
 ```sh
 npm install 
 ```
 
-Depois execute:
+To run the project:
 
 ```sh
 npm start
